@@ -3,6 +3,12 @@ vim-jack-syntax
 
 Vim syntax highlighting for the Jack Language in The Elements of Computing Systems
 
+Install: (Vim built-in packaging)
+-------------------
+    mkdir -p ~/.vim/pack/zirrostig/start
+    cd ~/.vim/pack/zirrostig/start
+    git clone https://github.com/zirrostig/vim-jack-syntax.git
+
 Install: (Pathogen)
 -------------------
     1) Clone this repo into your $VIM/bundle/ directory

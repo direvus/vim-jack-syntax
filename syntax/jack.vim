@@ -5,9 +5,15 @@
 "Email:     zirrostig <at> lanfort.org
 "Date:      10 Nov 2012
 
-if exists("b:current_syntax")
+if !exists("main_syntax")
+  if version < 600
+    syntax clear
+  elseif exists("b:current_syntax")
     finish
+  endif
+  let main_syntax = "jack"
 endif
+
 
 "Reserved Words
 syn keyword jack_reserved_class         class
@@ -64,30 +70,30 @@ syn region  jack_comment_api        start='\/\*\*' end='\*\/'   contains=jack_co
 
 "------------
 "Highlighting
-hi link jack_reserved_class         Structure
-hi link jack_reserved_define        Function
-hi link jack_reserved_primitive     Type
-hi link jack_type                   Type
-hi link jack_reserved_declare       StorageClass
-hi link jack_reserved_conditional   Conditional
-hi link jack_reserved_do            Keyword
-hi link jack_reserved_let           Keyword
-hi link jack_reserved_repeat        Repeat
-hi link jack_reserved_label         Label
-hi link jack_reserved_bool          Boolean
-hi link jack_reserved_null          Constant
-hi link jack_reserved_reference     Identifier
-hi link jack_identifier             Identifier
-hi link jack_function               Identifier
-hi link jack_function_def           Function
-hi link jack_int                    Number
-hi link jack_string                 String
-hi link jack_list_sep               Delimiter
-hi link jack_line_term              Delimiter
-hi link jack_assign_comp            Operator
-hi link jack_member                 Operator
-hi link jack_operator               Operator
-hi link jack_comment_line           Comment
-hi link jack_comment_multiline      Comment
-hi link jack_comment_api            Comment
-hi link jack_comment_todo           Todo
+hi def link jack_reserved_class         Structure
+hi def link jack_reserved_define        Function
+hi def link jack_reserved_primitive     Type
+hi def link jack_type                   Type
+hi def link jack_reserved_declare       StorageClass
+hi def link jack_reserved_conditional   Conditional
+hi def link jack_reserved_do            Keyword
+hi def link jack_reserved_let           Keyword
+hi def link jack_reserved_repeat        Repeat
+hi def link jack_reserved_label         Label
+hi def link jack_reserved_bool          Boolean
+hi def link jack_reserved_null          Constant
+hi def link jack_reserved_reference     Identifier
+hi def link jack_identifier             Identifier
+hi def link jack_function               Identifier
+hi def link jack_function_def           Function
+hi def link jack_int                    Number
+hi def link jack_string                 String
+hi def link jack_list_sep               Delimiter
+hi def link jack_line_term              Delimiter
+hi def link jack_assign_comp            Operator
+hi def link jack_member                 Operator
+hi def link jack_operator               Operator
+hi def link jack_comment_line           Comment
+hi def link jack_comment_multiline      Comment
+hi def link jack_comment_api            Comment
+hi def link jack_comment_todo           Todo
